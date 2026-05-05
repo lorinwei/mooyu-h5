@@ -83,6 +83,10 @@ ACHS = {
     "perfect_week":      ("完美摸鱼周",  "⭐", "一周每天都有摸鱼记录"),
 }
 
+@app.route("/")
+def root():
+    return json_resp({"msg": "摸鱼宝 API 运转中", "version": "1.0"})
+
 @app.route("/api/health")
 def health():
     return json_resp({"status": "ok", "ts": datetime.now().isoformat()})
