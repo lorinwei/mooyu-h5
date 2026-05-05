@@ -1,0 +1,18 @@
+{
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.py"
+    }
+  ],
+  "buildCommand": "pip install -r requirements.txt",
+  "installCommand": "pip install -r requirements.txt",
+  "outputDirectory": null,
+  "regions": [
+    "sin1"
+  ],
+  "env": {
+    "DATABASE_URL": "@mooyu_database_url",
+    "POSTGRES_URL": "@mooyu_postgres_url"
+  }
+}

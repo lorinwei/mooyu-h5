@@ -10,11 +10,14 @@ app.config["JSON_AS_ASCII"] = False
 
 SECRET_KEY = "mooyu_serverless_2024"
 ALGORITHM = "HS256"
-DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
 def get_conn():
-    url = DATABASE_URL or "postgresql://neondb_owner:npg_VpfC0AJq1vPR@ep-orange-voice-ao133r0o.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
-    return psycopg2.connect(url, sslmode="require", cursor_factory=RealDictCursor)
+    return psycopg2.connect(
+        "postgresql://neondb_owner:npg_VpfC0AJq1vPR@ep-orange-voice-ao133r0o.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require",
+        sslmode="require",
+        cursor_factory=RealDictCursor,
+        connect_timeout=10
+    )
 
 def query_db(sql, params=()):
     conn = get_conn()
