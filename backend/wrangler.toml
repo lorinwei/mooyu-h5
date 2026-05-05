@@ -1,0 +1,10 @@
+name = "mooyu-api"
+main = "worker.js"
+compatibility_date = "2026-05-05"
+
+[observability]
+enabled = true
+
+[[kv_namespaces]]
+binding = "MOYU_KV"
+id = "d5ca69be595b42d38aa25ef2af8a457d"

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://mooyu-backend-api.vercel.app/api';
+const BASE_URL = 'https://mooyu-api.lorinwei.workers.dev/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
