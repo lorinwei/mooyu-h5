@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000/api';
+const BASE_URL = 'https://mooyu-backend-api.vercel.app/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -114,7 +114,7 @@ export async function getDailyQuote() {
 
 export async function healthCheck() {
   try {
-    const res = await api.get('/daily-quote', { timeout: 3000 });
+    await api.get('/health', { timeout: 3000 });
     return true;
   } catch {
     return false;
